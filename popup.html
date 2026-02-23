@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Assistant</title>
+    <style>
+        body { 
+            width: 180px; 
+            padding: 15px; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            text-align: center;
+        }
+        h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        button { 
+            width: 100%; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 14px; 
+            font-weight: bold;
+            cursor: pointer; 
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #runBtn { 
+            background: #007bff; 
+            color: white; 
+        }
+        #runBtn:hover:not(:disabled) { 
+            background: #0056b3; 
+        }
+        #runBtn:disabled { 
+            background: #a0c4ff; 
+            cursor: not-allowed; 
+            box-shadow: none;
+        }
+        #clearBtn { 
+            background: #dc3545; 
+            color: white; 
+        }
+        #clearBtn:hover { 
+            background: #c82333; 
+        }
+        #status { 
+            font-size: 13px; 
+            color: #495057; 
+            display: none; 
+            margin: 10px 0 0 0; 
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <h3>🤖 AI Assistant</h3>
+    <button id="runBtn">Solve Quiz</button>
+    <button id="clearBtn">Clear Answer</button>
+    <p id="status"></p>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

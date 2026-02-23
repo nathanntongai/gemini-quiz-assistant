@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Quiz Assistant",
+  "version": "1.0",
+  "description": "AI assistant for answering multiple choice questions",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "solve_quiz": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Instantly solve the current quiz"
+    }
+  }
+}

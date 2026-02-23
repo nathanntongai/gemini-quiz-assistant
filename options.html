@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Assistant Settings</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 20px; 
+            max-width: 500px; 
+            margin: auto; 
+            background-color: #f4f7f6; 
+            color: #333; 
+        }
+        .card { 
+            background: white; 
+            padding: 20px 25px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            margin-bottom: 20px; 
+            border: 1px solid #eaeaea;
+        }
+        h2 { margin-top: 0; color: #2c3e50; font-size: 22px; }
+        h3 { margin-top: 0; color: #2c3e50; font-size: 16px; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px;}
+        label { font-weight: bold; display: block; margin-bottom: 8px; color: #555; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border: 2px solid #dfe6e9; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            font-family: monospace;
+            font-size: 14px;
+        }
+        input:focus { border-color: #007bff; outline: none; }
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: bold; 
+            transition: background 0.2s;
+        }
+        button:hover { background: #0056b3; }
+        #status { margin-top: 15px; font-weight: bold; display: none; text-align: center; }
+        
+        /* Guide Styles */
+        .guide { font-size: 14px; line-height: 1.6; color: #555; }
+        .guide a { color: #007bff; text-decoration: none; font-weight: bold; }
+        .guide a:hover { text-decoration: underline; }
+        ol { padding-left: 20px; margin-top: 10px; margin-bottom: 20px; }
+        li { margin-bottom: 8px; }
+        .highlight { background: #f8f9fa; padding: 3px 6px; border-radius: 4px; border: 1px solid #ddd; font-family: monospace; font-weight: bold; color: #d63384;}
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>⚙️ Extension Settings</h2>
+        
+        <label for="apiKey">Google Gemini API Key:</label>
+        <input type="password" id="apiKey" placeholder="Paste your AIza... key here">
+        
+        <button id="saveBtn">Save API Key</button>
+        <p id="status"></p>
+    </div>
+
+    <div class="card guide">
+        <h3>📖 How to get a free API Key</h3>
+        <ol>
+            <li>Go to <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a> and sign in.</li>
+            <li>Click the blue <strong>"Create API key"</strong> button.</li>
+            <li>Copy the generated key (it will usually start with <span class="highlight" style="color:#555">AIza</span>).</li>
+            <li>Paste it into the box above and click <strong>Save API Key</strong>.</li>
+        </ol>
+    </div>
+
+    <div class="card guide">
+        <h3>⌨️ Keyboard Shortcuts</h3>
+        <p>You can instantly solve a question without clicking the extension icon by using the default keyboard shortcut:</p>
+        <p style="text-align: center;"><span class="highlight">Alt + S</span> (Windows) &nbsp;or&nbsp; <span class="highlight">Option + S</span> (Mac)</p>
+        
+        <h3>🛠️ How to change your shortcut</h3>
+        <p>Browser security prevents direct links to shortcut settings, so follow these steps to customize your key:</p>
+        <ol>
+            <li>Copy this exact text: <span class="highlight">chrome://extensions/shortcuts</span> (or <span class="highlight">edge://extensions/shortcuts</span> if you are on Edge).</li>
+            <li>Paste it into your browser's top address bar and press <strong>Enter</strong>.</li>
+            <li>Scroll down to <strong>Gemini Quiz Assistant</strong>.</li>
+            <li>Click the pencil icon and press your preferred key combination!</li>
+        </ol>
+    </div>
+    
+    <div class="card">
+        <h3>🧹 Advanced Tools</h3>
+        <p style="font-size: 14px; color: #555;">If the AI ever gets stuck on a wrong answer, or if a quiz updates its questions, you can wipe the AI's memory to force it to think from scratch. (This will NOT delete your API key).</p>
+        
+        <button id="clearMemoryBtn" style="background: #dc3545;">Wipe AI Memory</button>
+        <p id="memoryStatus" style="margin-top: 15px; font-weight: bold; display: none; text-align: center; color: #28a745;"></p>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
